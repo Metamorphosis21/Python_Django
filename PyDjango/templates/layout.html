@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Style_02.css' %}">
+    <title>
+        {% block title %}
+        Default title
+        {% endblock  %}
+    </title>
+</head>
+<body>
+    {% comment %} 
+    template engines - 
+    1. load - to load the static template engine
+    2. block - to put codes from antwhere in the project
+    3. extend - to extend which file to use as default layout
+    {% endcomment %}
+    {% block content %} 
+    Default content
+    {% endblock  %}
+</body>
+</html>

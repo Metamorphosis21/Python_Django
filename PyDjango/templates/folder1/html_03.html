@@ -1,13 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'Style_03.css' %}">
-        <title>Document</title>
-    </head>
-    <body>
-        <h2>Django Html 03</h2>
-    </body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+Title Change 1
+{% endblock %}
+
+{% block content %}
+Content Change 1
+{% endblock %}
+
+{% comment %} Put this layout in the files to want to do minor changes but with a common layout {% endcomment %}

@@ -17,8 +17,8 @@ Including another URLconf
 
 from django.contrib import admin  
 # Importing the admin module for admin site functionality
-from django.urls import path  
-# Importing the path function to define URL patterns
+from django.urls import path, include
+# Importing the path function to define URL patterns and to other Apps
 from . import views  
 # Importing views from the current application
 
@@ -27,6 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # URL pattern for the Django admin site
 
     path('', views.res1, name='main'),  # URL pattern for the main page, routed to the res1 view
-    path('second/', views.res2, name='second'),  # URL pattern for the second page, routed to the res2 view
-    path('third/', views.res3, name='third'),  # URL pattern for the third page, routed to the res3 view
+    path('second/', views.res2, name='second'),
+    path('third/', views.res3, name='third'),  
+    path('layout/', views.res4, name='layout'),  
+    path('app01/',include('DjApp_01.urls')) # passing the controller to AppHtml_01 -> urls.py
 ]
