@@ -13,7 +13,7 @@ def res2(request):
 
 def res3(request):
     # return HttpResponse("Hello , This is your second step.")
-    return render(request, 'folder1\html_03.html')
+    return render(request, 'jinja_temp\jinja_index.html')
 
 def res4(request):
     # return HttpResponse("Hello , This is your second step.")

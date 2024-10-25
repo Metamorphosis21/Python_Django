@@ -30,5 +30,6 @@ urlpatterns = [
     path('second/', views.res2, name='second'),
     path('third/', views.res3, name='third'),  
     path('layout/', views.res4, name='layout'),  
-    path('app01/',include('DjApp_01.urls')) # passing the controller to AppHtml_01 -> urls.py
+
+    path('app01/',include('DjApp_01.urls')) # passing the controller to app01 -> urls.py
 ]

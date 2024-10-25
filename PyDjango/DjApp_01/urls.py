@@ -4,5 +4,5 @@ from . import views
 # Importing views from the current application
 
 urlpatterns = [
-    path('', views.app1, name='App01'),  
+    path('', views.app1, name='app01'),  
 ]
