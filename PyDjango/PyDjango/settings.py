@@ -37,8 +37,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'DjApp_01', # installed new app 
+
+    'tailwind', # tailwind packages
+
+    'theme',    # new tailwind app
+
+    'django_browser_reload', # for hot reload
 ]
+
+# Adding tailwind app name with Internal IP address
+TAILWIND_APP_NAME = 'theme' 
+INTERNAL_IPS = ['127.0.0.1']
+
+# NPM_BIN_PATH = 'npm.cmd'
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"   # for maximum reliability
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "django_browser_reload.middleware.BrowserReloadMiddleware"  # default setting -- always keep at last --
 ]
 
 ROOT_URLCONF = 'PyDjango.urls'

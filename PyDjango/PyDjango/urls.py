@@ -31,5 +31,7 @@ urlpatterns = [
     path('third/', views.res3, name='third'),  
     path('layout/', views.res4, name='layout'),  
 
-    path('app01/',include('DjApp_01.urls')) # passing the controller to app01 -> urls.py
+    path('app01/',include('DjApp_01.urls')), # passing the controller to app01 -> urls.py
+
+    path("__reload__/",include("django_browser_reload.urls")), # auto reloading -- keep at last (heavy path)
 ]
