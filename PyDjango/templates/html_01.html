@@ -1,4 +1,5 @@
 <!-- Loading the static template engine  -->
+{% load static tailwind_tags %} 
 {% load static %} 
 <!-- Go to settings and add \static to the path -->
 <!DOCTYPE html>
@@ -7,10 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'Style_01.css' %}">
+    {% tailwind_css %} 
     <title>Html_01</title>
 </head>
 <body>
-    <h1>Django Html 01</h1>
+    <h1 class='bg-blue-700 text-2xl font-mono'>Django Html 01</h1>
+    <h2 class='text-center font-mono py-4 italic'>Hot reload testing</h2>
 </body>
 </html>
 

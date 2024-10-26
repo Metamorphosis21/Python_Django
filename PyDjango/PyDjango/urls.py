@@ -24,12 +24,14 @@ from . import views
 
 # Defining the URL patterns for the application
 urlpatterns = [
-    path('admin/', admin.site.urls),  # URL pattern for the Django admin site
+    path('admin/', admin.site.urls),  # URL pattern for the Django admin site (admin panel)
 
     path('', views.res1, name='main'),  # URL pattern for the main page, routed to the res1 view
     path('second/', views.res2, name='second'),
     path('third/', views.res3, name='third'),  
     path('layout/', views.res4, name='layout'),  
 
-    path('app01/',include('DjApp_01.urls')) # passing the controller to app01 -> urls.py
+    path('app01/',include('DjApp_01.urls')), # passing the controller to app01 -> urls.py
+
+    path("__reload__/",include("django_browser_reload.urls")), # auto reloading -- keep at last (heavy path)
 ]
