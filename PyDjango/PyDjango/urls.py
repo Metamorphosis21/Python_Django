@@ -34,8 +34,4 @@ urlpatterns = [
     path('app01/',include('DjApp_01.urls')), # passing the controller to app01 -> urls.py
 
     path("__reload__/",include("django_browser_reload.urls")), # auto reloading -- keep at last (heavy path)
-<<<<<<< HEAD
 ]
-=======
-]
->>>>>>> 6c62d380baa29ac2d274d95d6cb153ff3a7fbdeb
