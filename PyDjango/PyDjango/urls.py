@@ -21,6 +21,9 @@ from django.urls import path, include
 # Importing the path function to define URL patterns and to other Apps
 from . import views  
 # Importing views from the current application
+from django.conf import settings
+from django.conf.urls.static import static
+# Load MEDIA_ROOT and MEDIA_URL from settings
 
 # Defining the URL patterns for the application
 urlpatterns = [
@@ -34,4 +37,4 @@ urlpatterns = [
     path('app01/',include('DjApp_01.urls')), # passing the controller to app01 -> urls.py
 
     path("__reload__/",include("django_browser_reload.urls")), # auto reloading -- keep at last (heavy path)
-]
+] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT) # handles urls of the model

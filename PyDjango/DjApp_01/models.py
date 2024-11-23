@@ -2,8 +2,8 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class  model1(models.Model):    # from the above imported models , we take a Model
-    # restricted choice given to the user
+class model1(models.Model):    # from the above imported models , we take a Model
+    # restricted choice given to the user (Enum)
     MODEL_TYPES = [
         ('mt1', 'm_type1'),
         ('mt2', 'm_type2'),
