@@ -1,28 +1,23 @@
 {% load static tailwind_tags %} 
-{% load static %}
+{% load static %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Style_02.css' %}">
+    <link rel="stylesheet" href="{% static 'Style_01.css' %}">
     {% tailwind_css %} 
     <title>
         {% block title %}
-        Default title
-        {% endblock  %}
+            Layout
+        {% endblock %}
     </title>
 </head>
 <body>
-    {% comment %} 
-    template engines - 
-    1. load - to load the static template engine
-    2. block - to put codes from antwhere in the project
-    3. extend - to extend which file to use as default layout
-    {% endcomment %}
-    this is layout html used as <br>
-    {% block content %} 
-    Default content
-    {% endblock  %}
+    <h1 class='bg-green-800 my-4 text-2xl font-mono'>- App_01 -</h1>
+    <h1 class='bg-yellow-600 my-2 text-xl text-black font-mono text-center'>Models testing</h2>
+     {% block content %}
+        Model_List
+     {% endblock  %}   
 </body>
 </html>

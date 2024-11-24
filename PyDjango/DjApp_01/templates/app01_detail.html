@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    App_01_Details
+{% endblock title %}
+
+{% block content %}
+    <h1>Model Detail Page</h1>
+    <h2>{{md_details.name}}</h2>
+    <p><i>{{md_details.description}}</i></p> {% comment %}take the name from the variable taken in th resspective view function {% endcomment %}
+{% endblock %}

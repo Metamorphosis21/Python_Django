@@ -137,7 +137,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR , 'static')] # adding \static to the base path for static template engine
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = [os.path.join(BASE_DIR , 'media')]
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media') # adding media path to store media contents, not usin [] as the urlpath gets taken as list and (TypeError: _path_normpath: path should be string, bytes or os.PathLike, not list) error generates
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
