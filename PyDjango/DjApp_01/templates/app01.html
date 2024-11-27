@@ -9,7 +9,7 @@
         {% for md in md_types %}
             <div class='model-items bg-gray-600 p-2 text-center'>
                 <h2 class='my-1 text-center'>Name : {{md.name}}</h2>
-                <img src="{{md.images.url}}" class= 'h-40 w-full items-center bg-red-400' alt="">
+                <img src="{{md.images.url}}" class= 'h-42 w-full items-center bg-red-400' alt="">
                 <a href="{% url 'app01_details' md.id %}"><button class='bg-green-700 text-black px-2 mt-2 rounded-sm hover:text-green-500 hover:bg-black'>{{md.ml_types}}</button></a>
                 <p class='text-end text-[10px]'>{{md.date}}</p>
             </div>
