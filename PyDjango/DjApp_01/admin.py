@@ -19,8 +19,6 @@ class modelCertificateAdmin(admin.ModelAdmin):
     list_display = ('cert_name' , 'cert_number')
 
 
-
-
 admin.site.register(model1 , modelVarietyadmin)
 admin.site.register(modelStore , modelStoreAdmin)
 admin.site.register(modelCertificate , modelCertificateAdmin)
