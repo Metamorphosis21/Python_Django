@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    App_01_Store
+{% endblock title %}
+
+{% block content %}
+    <h1 class='font-semibold text-xl'>Model form Page</h1>
+    <form method="POST" class='text-black m-4'>
+        {% csrf_token %}  {% comment %} to make forms injection proof {% endcomment %}
+        {{form}}
+        <button type="submit" class='bg-pink-600 p-2 m-2'>Search Store</button>
+    </form>
+
+    {% if  md_stores %}
+        <h2>Available Stores near you: </h2>
+        <ul>
+            {% for store in md_stores %}
+                <li>{{store.st_name}} --> {{store.st_address}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
