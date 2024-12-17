@@ -42,3 +42,5 @@
     - Redirect to the urls.py file in the from the main urls.py file
 
     <span style="color: orange;">**!! Run the django project to verify !!**</span>
+
+# random context ----
