@@ -28,7 +28,7 @@
     - Media setup 
 
 - **Creating Apps** :
-    ```
+    ```bash
     python manage.py startapp <app_name>
     ```
     - Add in settings.py in INSTALLED_APPS
@@ -50,4 +50,20 @@
 - **Adding Tailwind and Bootstrap** :
     
     - For bootstrap just add the link to the bootstrap in the layout.html file
-    - For tailwind, 
+    - For Tailwind and hot-reload, 
+    ```bash
+        python manage.py tailwind init
+        # Add 'tailwind' and 'theme' to INSATLLED_APPS
+        python manage.py tailwind install
+        # Add the NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd" with INTERNAL_IPS = ["127.0.0.1",]
+
+        # In new terminal , run this command
+        python manage.py tailwind start
+
+        # For hot reload,
+        # Add 'django_browser_reload' to INSTALLED_APPS
+        # Add 'django_browser_reload.middleware.BrowserReloadMiddleware', to MIDDLEWARE
+        # Add path("__reload__/", include("django_browser_reload.urls")), to urls.py
+         
+    ```
+    
