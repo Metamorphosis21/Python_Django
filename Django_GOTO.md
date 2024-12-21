@@ -64,6 +64,7 @@
         # Add 'django_browser_reload' to INSTALLED_APPS
         # Add 'django_browser_reload.middleware.BrowserReloadMiddleware', to MIDDLEWARE
         # Add path("__reload__/", include("django_browser_reload.urls")), to urls.py
+        # To use tailwind, add {% load static tailwind_tags %} and {% tailwind_css %} templates to all html files
          
     ```
     

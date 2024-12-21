@@ -27,11 +27,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.demo_01),
-    path('two/',views.base_view, name='base_view'),
-    
+    path('base/',views.base_view, name='base_view'),
     
     # redirecting to urls.py of the app 
-    # path('FSP_01/', include('FSP_01.urls')),
+    path('FSP_01/', include('FSP_01.urls')),
     path("__reload__/", include("django_browser_reload.urls")), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # media setup
