@@ -68,3 +68,20 @@
          
     ```
     
+- **Adding Models** :
+
+    - Make a model.py file in your app
+    - Import models and User
+    - Make a class and add neccessary fields to have in your model
+    - Make a dunder self to return what you want
+    - Make a admin.py file in same app directory
+    - Register your model in the admin file
+    - Make a migration and apply it to the database
+    ```bash
+        python manage.py makemigrations
+        python manage.py migrate
+        python manage.py runserver
+    ```
+
+- **Adding Forms to Models** :
+    
