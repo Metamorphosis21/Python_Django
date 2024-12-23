@@ -85,3 +85,11 @@
 
 - **Adding Forms to Models** :
     
+    - Make a class and add ModelForm
+    - Assign your model and add what fields you want to use in your forms
+
+- **Views for your App** :
+
+    - Import models, forms and get_object_or_404  
+    - 
+    - 
