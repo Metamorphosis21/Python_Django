@@ -91,5 +91,7 @@
 - **Views for your App** :
 
     - Import models, forms and get_object_or_404  
-    - 
-    - 
+    - Add funtionalities to your Application in views.py
+
+- **Add templates for your views** :
+        
