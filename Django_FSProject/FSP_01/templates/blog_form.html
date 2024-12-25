@@ -1,9 +1,19 @@
 {% extends "layout.html" %}
 
-{% block title %}
-    Dummy_DJFullstack
-{% endblock %}
-
 {% block content %}
-    Blog_Form
+    <div class="my-3 mx-5">
+        <h2>
+            {%if blog_form.instance.pk%}
+                Edit a Blog Post    
+            {%else%}
+                Create a new Blog Post
+            {%endif%}
+        </h2>
+        <form method="post" enctype="multipart/form-data" class='form my-3'>
+            {% csrf_token %}
+            {{blog_form.as_p}}
+            <button class="btn btn-warning">Confirm</button>
+        </form>
+        <a href="{% url 'blog_list' %}">Go back << </a>
+    </div>
 {% endblock %}
