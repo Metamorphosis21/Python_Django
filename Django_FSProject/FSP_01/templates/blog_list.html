@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <a class="btn btn-warning m-3" href="{% url 'blog_create' %}">Create a blog</a>
+    <div class="row gap-4 p-2 mx-3 border w-[90%]">
+        {%for bg in blog_list%}
+        <div class="card p-1" style="width: 20rem;">
+            <img src="{{bg.thumbnail.url}}" class="h-auto w-60" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{bg.title}}</h5>
+              <p class="card-text">{{bg.content}}</p>
+              <p class="card-user">{{bg.author}}</p>
+              <a href="{% url 'blog_edit' bg.id%}" class="btn btn-primary">Edit Post</a>
+              <a href="{% url 'blog_delete' bg.id%}" class="btn btn-danger">Delete Post</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+{% endblock %}

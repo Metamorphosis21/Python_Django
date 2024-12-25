@@ -1,10 +1,11 @@
+
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blog
 from .forms import BlogForm
 
 # Create your views here. Views are simple functions that return a response.
 def view01(request):
-    return render(request, 'dummy.html')
+    return render(request, 'layout.html')
 
 # Funtionalities:
 

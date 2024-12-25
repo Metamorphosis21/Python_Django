@@ -94,4 +94,5 @@
     - Add funtionalities to your Application in views.py
 
 - **Add templates for your views** :
+    - Adding html templates according to your requirments
         
