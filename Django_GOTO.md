@@ -44,7 +44,7 @@
 
     <span style="color: orange;">**!! Run the django project to verify !!**</span>
     <br/>
-    <span style="color: lightblue;">**To run project check the base url file for name**</span>
+    <span style="color: gray;">**To run project check the base url file for name**</span>
 
 
 - **Adding Tailwind and Bootstrap** :
@@ -95,4 +95,23 @@
 
 - **Add templates for your views** :
     - Adding html templates according to your requirments
-        
+    - Performing necessary actions in the templates
+
+- **Protection and authorization** :
+    - Protect your views    
+    - User Registration in forms.py
+
+- **User Login and Logout** :
+    - Add manual settings for login and logout 
+    - Login and logout html templates
+
+- **Fix any bugs found**
+
+- **Add more functionalites**
+    <br/>
+    <span style="color: lightgreen;">
+        - ? Logout     <br/>
+        - ? Search for blog posts(title, author)    <br/>
+        - ? Post audio, videos in blog posts    <br/>
+        - ? Add likes, comments, tags to blog posts
+    </span>

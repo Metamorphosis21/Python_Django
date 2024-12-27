@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="my-3 mx-5">
+        <h2>
+            Login Now 
+        </h2>
+        <form method="post" class='form my-3'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-warning">Login</button>
+        </form>
+        <h3>Dont have an account?? Register here : <a href="{% url 'register' %}">Register</a></h3>
+        <br>
+        <a href="{% url 'blog_list' %}">Go back << </a>
+    </div>
+{% endblock %}  

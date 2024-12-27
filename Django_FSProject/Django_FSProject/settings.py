@@ -142,3 +142,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Setup --> Configure in urls.py files to reflect media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# manually giving the path for login and logout
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/FSP_01'
+LOGOUT_REDIRECT_URL = '/FSP_01/'
