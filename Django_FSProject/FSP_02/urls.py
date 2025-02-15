@@ -15,20 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+
 # views setup
-from django.urls import path, include
-from . import views  
+from django.urls import path
+from .views import *
+
 # static setup
 from django.conf import settings
 from django.conf.urls.static import static
-
+# from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # redirecting to urls.py of the app 
-    path('FSP_01/', include('FSP_01.urls')),
-    path('FSP_02/', include('FSP_02.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path("__reload__/", include("django_browser_reload.urls")), 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# media setup
+    path('', RoomView.as_view(), name='music_home'),
+]

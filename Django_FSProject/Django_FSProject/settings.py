@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Adding new app 
     'FSP_01',
+    'FSP_02',
     'tailwind',
     'theme',
+    'rest_framework',
     'django_browser_reload', # for hot reload
 ]
 TAILWIND_APP_NAME = 'theme'
