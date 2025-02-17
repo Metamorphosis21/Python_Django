@@ -11,6 +11,6 @@ from .serializers import RoomSerializer
 # ListCreateAPIView	✅ Yes	        ✅ Yes	        ❌ No
 # ModelViewSet	    ✅ Yes	        ✅ Yes	        ✅ Yes (Full CRUD)
 
-class RoomView(generics.ListAPIView):
+class RoomView(generics.CreateAPIView):
     queryset = MusicRoom.objects.all()
     serializer_class = RoomSerializer
