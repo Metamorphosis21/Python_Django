@@ -1,18 +1,20 @@
-import React, {Component} from "react";
-import {createRoot} from "react-dom/client" ;
+import React from 'react';
+import { styled } from '@mui/material/styles';
 
-export default class App extends Component {
-    constructor (props){
-        super(props);
-    }
+const HomeContainer = styled('div')(({ theme }) => ({
+  padding: theme.spacing(2),
+  textAlign: 'center',
+  borderRadius: theme.shape.borderRadius,            
+  boxShadow: theme.shadows[8],
+  height: '50vh',                      
+}));
 
-    render() {
-        return(<h1>Testing React Code</h1>)
-    }
-
+function Home() {
+  return (
+    <HomeContainer>
+      <h1>Home Page</h1>
+    </HomeContainer>
+  );
 }
 
-const appDiv = document.getElementById('app');
-
-const root = createRoot(appDiv);
-root.render(<App />);
+export default Home;
