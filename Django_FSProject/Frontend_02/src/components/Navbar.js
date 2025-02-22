@@ -20,6 +20,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import LoginOut from './Loginout';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: 'transparent',
@@ -105,6 +106,17 @@ const StyledButton = styled(Button)({
   }
 });
 
+const LogoutButton = styled(Button)(({ theme }) => ({
+  color: '#ff4444',
+  border: '2px solid #ff4444',
+  borderRadius: '50px',
+  fontWeight: 500,
+  '&:hover': {
+    backgroundColor: 'rgba(255, 68, 68, 0.1)',
+    border: '2px solid #ff4444'
+  },
+}));
+
 export default function Navbar() {
   const [musicAnchor, setMusicAnchor] = useState(null);
   const [chatAnchor, setChatAnchor] = useState(null);
@@ -130,6 +142,8 @@ const [joinChatRoomData, setJoinChatRoomData] = useState({
   roomId: '',
   password: ''
 });
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   const handleMusicClick = (event) => setMusicAnchor(event.currentTarget);
   const handleChatClick = (event) => setChatAnchor(event.currentTarget);
@@ -207,6 +221,19 @@ const [joinChatRoomData, setJoinChatRoomData] = useState({
     console.log('Joining chat room:', joinChatRoomData);
     handleJoinChatRoomClose();
   };
+
+  const handleLoginClick = () => {
+    setLoginModalOpen(true);
+  };
+  
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+    setLoginModalOpen(false);
+  };
+  
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
   
   return (
     <>
@@ -244,7 +271,15 @@ const [joinChatRoomData, setJoinChatRoomData] = useState({
               <StyledMenuItem onClick={handleJoinChatRoomOpen}>Join Room</StyledMenuItem>
             </StyledMenu>
   
-            <NavButton>Login</NavButton>
+            {isLoggedIn ? (
+              <LogoutButton variant="outlined" onClick={handleLogout}>
+                Logout
+              </LogoutButton>
+            ) : (
+              <NavButton onClick={handleLoginClick}>
+                Login
+              </NavButton>
+            )}
           </Box>
         </StyledToolbar>
       </StyledAppBar>
@@ -402,6 +437,12 @@ const [joinChatRoomData, setJoinChatRoomData] = useState({
           </StyledButton>
         </DialogActions>
       </StyledDialog>
+
+      <LoginOut 
+        open={loginModalOpen} 
+        onClose={() => setLoginModalOpen(false)}
+        onLoginSuccess={handleLoginSuccess}
+      />
     </>
   );
 }
