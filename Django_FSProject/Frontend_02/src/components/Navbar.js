@@ -16,6 +16,8 @@ import {
   DialogActions,
   TextField,
   InputAdornment,
+  Checkbox,
+  FormControlLabel,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -117,6 +119,28 @@ const LogoutButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const StyledCheckbox = styled(Checkbox)({
+  '&.MuiCheckbox-root': {
+    color: 'orange',
+  },
+  '&.Mui-checked': {
+    color: 'orange',
+  },
+  '& .MuiSvgIcon-root': {
+    fontSize: '1.5rem',
+  },
+});
+
+const StyledFormControlLabel = styled(FormControlLabel)({
+  '& .MuiFormControlLabel-label': {
+    color: 'orange',
+    fontSize: '1rem',
+  },
+  marginTop: '16px',
+  marginBottom: '8px',
+  width: '90%',
+});
+
 export default function Navbar() {
   const [musicAnchor, setMusicAnchor] = useState(null);
   const [chatAnchor, setChatAnchor] = useState(null);
@@ -125,7 +149,8 @@ export default function Navbar() {
   const [roomData, setRoomData] = useState({
     roomId: '',
     password: '',
-    limit: ''
+    limit: '',
+    allowGuestControl: false
   });
   const [joinRoomData, setJoinRoomData] = useState({
     roomId: '',
@@ -157,7 +182,12 @@ const [loginModalOpen, setLoginModalOpen] = useState(false);
 
   const handleCreateRoomClose = () => {
     setCreateRoomOpen(false);
-    setRoomData({ roomId: '', password: '', limit: '' });
+    setRoomData({ 
+      roomId: '', 
+      password: '', 
+      limit: '',
+      allowGuestControl: false 
+    });
   };
 
   const handleJoinRoomOpen = () => {
@@ -319,6 +349,16 @@ const [loginModalOpen, setLoginModalOpen] = useState(false);
             fullWidth
             value={roomData.limit}
             onChange={(e) => setRoomData({ ...roomData, limit: e.target.value })}
+          />
+          <StyledFormControlLabel
+            control={
+              <StyledCheckbox
+                checked={roomData.allowGuestControl}
+                onChange={(e) => setRoomData({ ...roomData, allowGuestControl: e.target.checked })}
+              />
+            }
+            label="Allow guest play/pause"
+            sx={{ display: 'flex', marginLeft: 0 }}
           />
         </DialogContent>
         <DialogActions sx={{ p: 2 }}>

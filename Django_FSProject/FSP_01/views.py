@@ -1,8 +1,7 @@
-
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blog
 from .forms import BlogForm, UserRegistrationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout  # Add logout here
 from django.contrib.auth.decorators import login_required
 
 # Create your views here. Views are simple functions that return a response.
@@ -67,3 +66,8 @@ def register(request):
     else:
         blog_form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'blog_form': blog_form})
+
+@login_required
+def logout_view(request):
+    logout(request)
+    return redirect('blog_list')
